@@ -13,7 +13,7 @@ class TaskController extends Controller
      */
     public function index()
     {
-        $tasks = Task::all();
+        $tasks = Task::where('user_id', auth()->id())->get();
         return view('tasks.index', compact('tasks'));
     }
 
@@ -36,6 +36,7 @@ class TaskController extends Controller
         ]);
 
         Task::create([
+            'user_id' => auth()->id(),
             'title' => $request->title,
             'description' => $request->description,
             'is_completed' => false,

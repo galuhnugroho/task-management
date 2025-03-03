@@ -6,6 +6,11 @@
             <h2>Task Management</h2>
         </div>
 
+        <div class="col-md-12">
+            <a href="/logout" class="btn btn-danger">Logout</a>
+        </div>
+
+
         @session('success')
             <div class="col-md-12">
                 <div class="alert  alert-success">
